@@ -1,0 +1,19 @@
+.c-main-nav {
+    
+    &__list {
+        list-style: none;
+        font-size: var(--smaller-body-size);
+    }
+
+    &__item {
+    }
+
+    &__link {
+        color: var(--text-color);
+
+        &:hover {
+            color: var(--accent-color-alt);
+            text-decoration: none;
+        }
+    }
+}

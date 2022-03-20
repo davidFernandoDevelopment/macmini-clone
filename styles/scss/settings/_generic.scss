@@ -1,0 +1,22 @@
+:root {
+    --text-color: #fff;
+    --text-color-alt: #a1a1a6;
+    --accent-color: #0071e3;
+    --accent-color-alt: #2997ff;
+    --body-bg: #000;
+
+    --bg-color: #151516;
+    --bg-color-alt: #1d1d1f;
+
+    /* Stacking context */
+    --z-negative: -1;
+    --z-normal: 1;
+    --z-sticky: 50;
+
+    /* Utils */
+    --header-height: 3rem;
+    --time: 150ms;
+    --large-max-width: 91%;
+    --medium-max-width: 83%;
+    --small-max-width: 75%;
+}

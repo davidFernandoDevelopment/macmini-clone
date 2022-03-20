@@ -1,0 +1,15 @@
+.c-header {
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title{
+        color: var(--text-color);
+        font-weight: var(--semi-bold-font);
+        text-decoration: none;
+    }
+}
