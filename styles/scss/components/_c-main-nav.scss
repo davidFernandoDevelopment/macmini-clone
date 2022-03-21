@@ -1,14 +1,65 @@
 .c-main-nav {
-    
     &__list {
         list-style: none;
         font-size: var(--smaller-body-size);
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        padding: 0.25rem 2rem 1.5rem;
+        border-bottom: var(--border-main);
+        background-color: var(--bg-color);
+
+        overflow: hidden;
+        transform: translateY(-100%);
+        z-index: var(--z-negative);
+
+        transition: transform var(--transition-menu) var(--transition-menu);
+
+        .is-active & {
+            transform: initial;
+            transition-delay: 0s;
+        }
     }
 
     &__item {
+        border-bottom: var(--border-main);
+
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform var(--transition-menu), opacity var(--transition-menu);
+
+        &:first-of-type {
+            transition-delay: 70ms;
+        }
+        &:nth-of-type(2) {
+            transition-delay: 140ms;
+        }
+        &:last-of-type {
+            transition-delay: 210ms;
+            border-bottom: var(--header-border);
+        }
+
+        .is-active & {
+            transform: initial;
+            opacity: initial;
+
+            &:first-of-type {
+                transition-delay: 560ms;
+            }
+            &:nth-of-type(2) {
+                transition-delay: 490ms;
+            }
+            &:nth-of-type(3) {
+                transition-delay: 420ms;
+            }
+        }
     }
 
     &__link {
+        display: block;
+        padding: 0.85rem;
+        opacity: 0.9;
         color: var(--text-color);
 
         &:hover {

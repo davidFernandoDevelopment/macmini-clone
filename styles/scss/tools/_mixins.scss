@@ -1,0 +1,17 @@
+@mixin to($bp) {
+    @if is-core-breakpoint($bp) {
+        @if $bp == xs {
+            @content;
+        } @else {
+            @media screen and (max-width: get-breakpoint($bp)) {
+                @content;
+            }
+        }
+    } @else if is-breakpoint-valid($bp) {
+        @media screen and (max-width: $bp) {
+            @content;
+        }
+    } @else {
+        @error 'El mixin solo recibe: [#{$sizes}], o un numero en px, em o rem';
+    }
+}

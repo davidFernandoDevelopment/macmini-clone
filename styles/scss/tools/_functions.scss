@@ -1,0 +1,18 @@
+@function is-core-breakpoint($bp) {
+    @if index($sizes, $bp) {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+@function is-breakpoint-valid($bp) {
+    @if type-of($bp) == number and (unit($bp) == "px" or unit($bp) == "em" or unit($bp) == "rem") {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+@function get-breakpoint($alias-bp) {
+    @return map-get($breakpoints, $alias-bp);
+}

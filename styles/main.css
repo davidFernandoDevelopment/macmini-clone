@@ -13,9 +13,11 @@
   /* Utils */
   --header-height: 3rem;
   --time: 150ms;
+  --transition-menu: 400ms;
   --large-max-width: 91%;
   --medium-max-width: 83%;
-  --small-max-width: 75%; }
+  --small-max-width: 75%;
+  --border-main: 1px solid rgba(255, 255, 255, 0.25); }
 
 @font-face {
   font-family: 'SF Pro Text';
@@ -158,28 +160,138 @@ a.arrow::after {
 img {
   max-width: 100%; }
 
-.c-header {
-  position: sticky;
-  top: 0;
-  height: var(--header-height);
-  width: 100%;
+.o-place-center {
   display: flex;
-  justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
+
+.o-gap {
+  gap: 0.75rem; }
+
+.c-header {
+  top: 0;
+  position: sticky;
+  height: var(--header-height);
+  z-index: var(--z-sticky);
+  background-color: var(--bg-color-alt); }
+  .c-header__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    @media screen and (max-width: 768px) {
+      .c-header__wrapper {
+        max-width: calc(100% - 2rem);
+        margin-inline: auto; } }
   .c-header__title {
     color: var(--text-color);
-    font-weight: var(--semi-bold-font);
-    text-decoration: none; }
+    font-weight: var(--semi-bold-font); }
+    .c-header__title:hover {
+      text-decoration: none; }
+  .c-header__toggle {
+    opacity: 0.8;
+    width: 2rem;
+    height: 2rem;
+    position: relative; }
+    .c-header__toggle:hover {
+      opacity: 1; }
+    .c-header__toggle::before, .c-header__toggle::after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      width: 0.75rem;
+      background-color: #fff;
+      transition: transform 1000ms cubic-bezier(0.86, 0, 0.07, 1); }
+    .c-header__toggle::before {
+      left: 45%;
+      transform: rotate(-40deg); }
+    .c-header__toggle::after {
+      right: 45%;
+      transform: rotate(40deg); }
+    .c-header.is-active .c-header__toggle::before {
+      transform: rotate(40deg); }
+    .c-header.is-active .c-header__toggle::after {
+      transform: rotate(-40deg); }
 
 .c-main-nav__list {
   list-style: none;
-  font-size: var(--smaller-body-size); }
+  font-size: var(--smaller-body-size);
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  padding: 0.25rem 2rem 1.5rem;
+  border-bottom: var(--border-main);
+  background-color: var(--bg-color);
+  overflow: hidden;
+  transform: translateY(-100%);
+  z-index: var(--z-negative);
+  transition: transform var(--transition-menu) var(--transition-menu); }
+  .is-active .c-main-nav__list {
+    transform: initial;
+    transition-delay: 0s; }
+
+.c-main-nav__item {
+  border-bottom: var(--border-main);
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform var(--transition-menu), opacity var(--transition-menu); }
+  .c-main-nav__item:first-of-type {
+    transition-delay: 70ms; }
+  .c-main-nav__item:nth-of-type(2) {
+    transition-delay: 140ms; }
+  .c-main-nav__item:last-of-type {
+    transition-delay: 210ms;
+    border-bottom: var(--header-border); }
+  .is-active .c-main-nav__item {
+    transform: initial;
+    opacity: initial; }
+    .is-active .c-main-nav__item:first-of-type {
+      transition-delay: 560ms; }
+    .is-active .c-main-nav__item:nth-of-type(2) {
+      transition-delay: 490ms; }
+    .is-active .c-main-nav__item:nth-of-type(3) {
+      transition-delay: 420ms; }
 
 .c-main-nav__link {
+  display: block;
+  padding: 0.85rem;
+  opacity: 0.9;
   color: var(--text-color); }
   .c-main-nav__link:hover {
     color: var(--accent-color-alt);
     text-decoration: none; }
+
+.c-overlay {
+  position: fixed;
+  z-index: var(--z-normal);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 1000ms 100ms;
+  pointer-events: none; }
+  .c-header.is-active ~ .c-overlay {
+    opacity: 1;
+    pointer-events: initial; }
+
+.c-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
+  border-radius: 100px;
+  background-color: var(--accent-color);
+  transition: background-color var(--time); }
+  .c-button:hover {
+    text-decoration: none;
+    background-color: var(--accent-color-alt); }
+  .c-button--tiny {
+    padding: 0.25rem 0.5rem;
+    font-size: var(--smaller-body-size); }
 
 .black-background {
   background-color: var(--bg-color); }

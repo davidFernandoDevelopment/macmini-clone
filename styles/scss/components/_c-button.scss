@@ -1,0 +1,19 @@
+.c-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: var(--text-color);
+    border-radius: 100px;
+    background-color: var(--accent-color);
+
+    transition: background-color var(--time);
+
+    &:hover {
+        text-decoration: none;
+        background-color: var(--accent-color-alt);
+    }
+
+    &--tiny {
+        padding: 0.25rem 0.5rem;
+        font-size: var(--smaller-body-size);
+    }
+}
