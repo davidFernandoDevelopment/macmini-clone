@@ -5,4 +5,21 @@
 }
 .o-gap {
     gap: 0.75rem;
+
+    @include from(md) {
+        gap: 1.5rem;
+    }
+}
+.o-container {
+    margin-inline: auto;
+    width: 87.5%;
+    max-width: calc(17.5rem + 4rem);
+
+    @include from(md) {
+        width: 100%;
+        max-width: calc(100% - 3rem);
+    }
+    @include from(lg) {
+        max-width: 61.25rem;
+    }
 }

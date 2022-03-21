@@ -7,6 +7,10 @@
 
     $b: &;
 
+    @include from(md) {
+        border-bottom: var(--border-main);
+    }
+
     &__wrapper {
         width: 100%;
         height: 100%;
@@ -16,13 +20,13 @@
 
         @include to(md) {
             max-width: calc(100% - 2rem);
-            margin-inline: auto;
         }
     }
 
     &__title {
         color: var(--text-color);
         font-weight: var(--semi-bold-font);
+        font-size: var(--normal-body-size);
 
         &:hover {
             text-decoration: none;
@@ -37,6 +41,10 @@
 
         &:hover {
             opacity: 1;
+        }
+
+        @include from(md) {
+            display: none;
         }
 
         &::before,
@@ -64,7 +72,7 @@
             &::before {
                 transform: rotate(40deg);
             }
-    
+
             &::after {
                 transform: rotate(-40deg);
             }

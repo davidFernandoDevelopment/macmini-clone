@@ -22,13 +22,14 @@
     --small-max-width: 75%;
 
     --border-main: 1px solid rgba(255, 255, 255, 0.25);
+    --gap-element: 1.5rem;
 }
 
 $breakpoints: (
     xxs: 0px,
     xs: 350px,
     sm: 576px,
-    md: 768px,
+    md: 734px,
     lg: 1024px,
     xl: 1200px,
     xxl: 1440px,

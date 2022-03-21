@@ -20,6 +20,16 @@
             transform: initial;
             transition-delay: 0s;
         }
+
+        @include from(md) {
+            position: static;
+            transform: initial;
+            display: flex;
+            padding: 0;
+            border-bottom: none;
+
+            gap: var(--gap-element);
+        }
     }
 
     &__item {
@@ -54,6 +64,12 @@
                 transition-delay: 420ms;
             }
         }
+
+        @include from(md) {
+            opacity: 1;
+            transform: initial;
+            border-bottom: none;
+        }
     }
 
     &__link {
@@ -65,6 +81,10 @@
         &:hover {
             color: var(--accent-color-alt);
             text-decoration: none;
+        }
+
+        @include from(md) {
+            padding: 0;
         }
     }
 }
