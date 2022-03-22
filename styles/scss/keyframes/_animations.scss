@@ -1,0 +1,12 @@
+@keyframes turn-on-images {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: initial;
+        transform: initial;
+    }
+}
