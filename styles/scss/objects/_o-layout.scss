@@ -22,6 +22,19 @@
         max-width: 61.25rem;
     }
 }
+
+.c-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include from(md) {
+        gap: 7rem;
+    }
+    @include from(lg) {
+        gap: 10rem;
+    }
+}
 .o-center-x {
     left: 50%;
     transform: translateX(-50%);

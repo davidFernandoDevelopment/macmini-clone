@@ -1,0 +1,47 @@
+.c-chip {
+    &__logo {
+        height: 3rem;
+        margin-bottom: 0.25rem;
+
+        @include from(md) {
+            height: 4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @include from(lg) {
+            height: 5rem;
+            margin-bottom: 0.75rem;
+        }
+    }
+
+    &__video {
+        position: absolute;
+        z-index: var(--z-negative);
+        width: 59rem;
+
+        @include from(md) {
+            width: 81rem;
+        }
+
+        @include from(lg) {
+            width: 112rem;
+        }
+
+        &-container {
+            height: 30rem;
+            overflow: hidden;
+            position: relative;
+            margin-top: -2rem;
+
+            @include from(md) {
+                height: 40rem;
+                margin-top: -4rem;
+            }
+
+            @include from(lg) {
+                height: 60rem;
+                margin-top: -10rem;
+            }
+        }
+    }
+}

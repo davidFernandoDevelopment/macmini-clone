@@ -41,7 +41,7 @@ const handleEventListener = (mediaQuery) => {
     }
 }
 export const handleActiveMenu = () => {
-    if (isDesktop.matches) handleAddEventListener();
+    if (!isDesktop.matches) handleAddEventListener();
 
     isDesktop.addEventListener('change', handleEventListener);
 }
