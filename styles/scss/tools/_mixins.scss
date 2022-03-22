@@ -18,7 +18,7 @@
 
 @mixin from($bp) {
     @if is-core-breakpoint($bp) {
-        @if $bp == xs {
+        @if $bp == xxs {
             @content;
         } @else {
             @media screen and (min-width: get-breakpoint($bp)) {

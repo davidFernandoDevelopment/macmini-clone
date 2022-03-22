@@ -39,3 +39,19 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+.o-grid-section {
+    display: grid;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 25rem;
+    margin-inline: auto;
+
+    @include from(xs) {
+        width: calc(100% - 3rem);
+    }
+
+    @include from(md) {
+        max-width: 87.5rem;
+    }
+}
