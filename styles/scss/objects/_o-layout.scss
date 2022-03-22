@@ -23,3 +23,7 @@
         max-width: 61.25rem;
     }
 }
+.o-center-x {
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="icons/style.css">
 
     <title>Document</title>
 </head>
@@ -15,18 +16,18 @@
 
     <header class="js-header c-header">
         <div class="c-header__wrapper o-container">
-            <a href="#" class="c-header__title">Mac Mini</a>
+            <a href="#description" class="c-header__title">Mac Mini</a>
             <div class="o-place-center o-gap">
                 <nav class="c-main-nav">
                     <ul class="c-main-nav__list">
                         <li class="c-main-nav__item">
-                            <a href="#" class="c-main-nav__link">Descripción</a>
+                            <a href="#description" class="c-main-nav__link">Descripción</a>
                         </li>
                         <li class="c-main-nav__item">
-                            <a href="#" class="c-main-nav__link">¿ Porque la Mac ?</a>
+                            <a href="#why-mac" class="c-main-nav__link">¿ Porque la Mac ?</a>
                         </li>
                         <li class="c-main-nav__item">
-                            <a href="#" class="c-main-nav__link">Especificaciones</a>
+                            <a href="#specifications" class="c-main-nav__link">Especificaciones</a>
                         </li>
                     </ul>
                 </nav>
@@ -37,22 +38,46 @@
     </header>
     <div class="js-overlay c-overlay"></div>
 
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis pariatur quasi, labore vitae aperiam aliquid
-        dignissimos voluptas ipsa nemo asperiores repudiandae doloremque ipsum nulla incidunt quas nostrum dolorum
-        laudantium odit?</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis pariatur quasi, labore vitae aperiam aliquid
-        dignissimos voluptas ipsa nemo asperiores repudiandae doloremque ipsum nulla incidunt quas nostrum dolorum
-        laudantium odit?</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis pariatur quasi, labore vitae aperiam aliquid
-        dignissimos voluptas ipsa nemo asperiores repudiandae doloremque ipsum nulla incidunt quas nostrum dolorum
-        laudantium odit?</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis pariatur quasi, labore vitae aperiam aliquid
-        dignissimos voluptas ipsa nemo asperiores repudiandae doloremque ipsum nulla incidunt quas nostrum dolorum
-        laudantium odit?</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis pariatur quasi, labore vitae aperiam aliquid
-        dignissimos voluptas ipsa nemo asperiores repudiandae doloremque ipsum nulla incidunt quas nostrum dolorum
-        laudantium odit?</p>
-
+    <main class="c-main">
+        <section id="description" class="c-hero-banner">
+            <div class="c-hero-banner__img o-center-x">
+                <img class="c-hero-banner__picture o-center-x" src="media/img/hero-image.jpg" alt="hero-banner">
+            </div>
+            <div class="c-hero-banner__container o-container">
+                <h1 class="c-hero-banner__title">Mac Mini</h1>
+                <h2 class="c-hero-banner__subtitle">Cada vez mas <br />grande por dentro</h2>
+                <p class="c-hero-banner__description">
+                    El nuevo chip M1 diseñado por Apple lleva nuestra computadora de escritorio más versátil a otra
+                    dimensión. Ahora
+                    viene con un CPU hasta 3 veces más rápido, gráficos hasta 6 veces más veloces y nuestro Neural
+                    Engine más
+                    avanzado, que permite un aprendizaje automático hasta 15 veces más rápido. Podrás trabajar, jugar y
+                    crear con
+                    una velocidad y potencia que jamás habías imaginado. La Mac mini es poder para conquistarlo todo.
+                </p>
+                <div class="c-hero-banner__textico o-place-center">
+                    <img class="c-hero-banner__ico" src="media/img/chip-m1.jpg" alt="chip M1">
+                    <p>
+                        Con los superpoderes del chip M1 de Apple
+                    </p>
+                </div>
+                <div class="c-hero-banner__actions o-place-center">
+                    <a class="c-hero-banner__act" href="#">Desde $699</a>
+                    <a class="c-hero-banner__act arrow" href="#">Ver el evento</a>
+                </div>
+            </div>
+        </section>
+        <section id="why-mac" class="c-main__placeholder">
+            <h2>
+                <!-- ¿ Porque la mac ? -->
+            </h2>
+        </section>
+        <section id="specifications" class="c-main__placeholder">
+            <h2>
+                <!-- Espicificaciones -->
+            </h2>
+        </section>
+    </main>
 
     <script src="js/index.js" type="module"></script>
 </body>

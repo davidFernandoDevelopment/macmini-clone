@@ -168,7 +168,7 @@ img {
 
 .o-gap {
   gap: 0.75rem; }
-  @media screen and (min-width: 734px) {
+  @media screen and (min-width: 768px) {
     .o-gap {
       gap: 1.5rem; } }
 
@@ -176,7 +176,7 @@ img {
   margin-inline: auto;
   width: 87.5%;
   max-width: calc(17.5rem + 4rem); }
-  @media screen and (min-width: 734px) {
+  @media screen and (min-width: 768px) {
     .o-container {
       width: 100%;
       max-width: calc(100% - 3rem); } }
@@ -184,13 +184,17 @@ img {
     .o-container {
       max-width: 61.25rem; } }
 
+.o-center-x {
+  left: 50%;
+  transform: translateX(-50%); }
+
 .c-header {
   top: 0;
   position: sticky;
   height: var(--header-height);
   z-index: var(--z-sticky);
   background-color: var(--bg-color-alt); }
-  @media screen and (min-width: 734px) {
+  @media screen and (min-width: 768px) {
     .c-header {
       border-bottom: var(--border-main); } }
   .c-header__wrapper {
@@ -199,7 +203,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    @media screen and (max-width: 734px) {
+    @media screen and (max-width: 768px) {
       .c-header__wrapper {
         max-width: calc(100% - 2rem); } }
   .c-header__title {
@@ -215,7 +219,7 @@ img {
     position: relative; }
     .c-header__toggle:hover {
       opacity: 1; }
-    @media screen and (min-width: 734px) {
+    @media screen and (min-width: 768px) {
       .c-header__toggle {
         display: none; } }
     .c-header__toggle::before, .c-header__toggle::after {
@@ -254,7 +258,7 @@ img {
   .is-active .c-main-nav__list {
     transform: initial;
     transition-delay: 0s; }
-  @media screen and (min-width: 734px) {
+  @media screen and (min-width: 768px) {
     .c-main-nav__list {
       position: static;
       transform: initial;
@@ -284,7 +288,7 @@ img {
       transition-delay: 490ms; }
     .is-active .c-main-nav__item:nth-of-type(3) {
       transition-delay: 420ms; }
-  @media screen and (min-width: 734px) {
+  @media screen and (min-width: 768px) {
     .c-main-nav__item {
       opacity: 1;
       transform: initial;
@@ -298,7 +302,7 @@ img {
   .c-main-nav__link:hover {
     color: var(--accent-color-alt);
     text-decoration: none; }
-  @media screen and (min-width: 734px) {
+  @media screen and (min-width: 768px) {
     .c-main-nav__link {
       padding: 0; } }
 
@@ -330,6 +334,63 @@ img {
   .c-button--tiny {
     padding: 0.25rem 0.5rem;
     font-size: var(--smaller-body-size); }
+
+.c-hero-banner {
+  text-align: center; }
+  .c-hero-banner__img {
+    max-width: 46rem;
+    height: 27rem;
+    position: relative; }
+  .c-hero-banner__picture {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
+  .c-hero-banner__container {
+    margin-top: -5.5rem;
+    font-family: var(--display-font);
+    position: relative;
+    color: var(--text-color-alt);
+    font-size: var(--bigger-body-size);
+    font-weight: var(--medium-font);
+    letter-spacing: 0.0005em;
+    line-height: 1.25; }
+  .c-hero-banner__title {
+    margin-bottom: 0.5rem;
+    font-size: var(--bigger-body-size); }
+  .c-hero-banner__subtitle {
+    font-size: 3rem;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    font-weight: var(--bold-font);
+    margin-bottom: 1.25rem;
+    background-image: radial-gradient(#eff1ff, #000 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: 50% 75%;
+    background-size: 150% 200%; }
+  .c-hero-banner__description {
+    max-width: 56rem;
+    margin-inline: auto;
+    margin-bottom: 2.5rem; }
+  .c-hero-banner__textico, .c-hero-banner__act {
+    font-size: 1.25rem; }
+  .c-hero-banner__textico {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem; }
+  .c-hero-banner__ico {
+    --size: 4rem;
+    width: var(--size);
+    height: var(--size); }
+  .c-hero-banner__actions {
+    display: flex;
+    flex-direction: column; }
+  .c-hero-banner__act {
+    color: var(--text-color);
+    font-weight: var(--normal-font);
+    padding-block: 0.5rem; }
 
 .black-background {
   background-color: var(--bg-color); }
