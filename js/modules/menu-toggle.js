@@ -2,7 +2,7 @@ const header = document.querySelector('.js-header');
 const toggle = document.querySelector('.js-toggle');
 const overlay = document.querySelector('.js-overlay')
 const ACTIVE_CLASS = 'is-active';
-const isTablet = matchMedia('(max-width: 734px)');
+const isDesktop = matchMedia('(min-width: 768px)');
 
 const toggleMenu = () => header.classList.toggle(ACTIVE_CLASS);
 const closeMenu = () => header.classList.remove(ACTIVE_CLASS);
@@ -32,7 +32,7 @@ const handleRemoveEventListener = () => {
 const handleEventListener = (mediaQuery) => {
 
     console.log({ mediaQuery });
-    if (mediaQuery.matches) {
+    if (!mediaQuery.matches) {
         handleAddEventListener();
         console.log("Agregando ... ");
     } else {
@@ -41,7 +41,7 @@ const handleEventListener = (mediaQuery) => {
     }
 }
 export const handleActiveMenu = () => {
-    if (isTablet.matches) handleAddEventListener();
+    if (isDesktop.matches) handleAddEventListener();
 
-    isTablet.addEventListener('change', handleEventListener);
+    isDesktop.addEventListener('change', handleEventListener);
 }

@@ -5,6 +5,15 @@
         max-width: 46rem;
         height: 27rem;
         position: relative;
+
+        @include from(md) {
+            max-width: 66rem;
+            height: 39rem;
+        }
+        @include from(lg) {
+            max-width: 80rem;
+            height: 40rem;
+        }
     }
 
     &__picture {
@@ -23,19 +32,37 @@
         font-weight: var(--medium-font);
         letter-spacing: 0.0005em;
         line-height: 1.25;
+
+        @include from(md) {
+            margin-top: -8rem;
+        }
+
+        @include from(md) {
+            margin-top: -10rem;
+        }
     }
 
     &__title {
         margin-bottom: 0.5rem;
         font-size: var(--bigger-body-size);
+
+        @include from(md) {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        @include from(md) {
+            font-size: 6rem;
+            margin-bottom: 1.5rem;
+        }
     }
 
     &__subtitle {
-        font-size: 3rem;
+        font-size: 2rem;
         line-height: 1.05;
         letter-spacing: -0.015em;
         font-weight: var(--bold-font);
-        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
 
         background-image: radial-gradient(#eff1ff, #000 80%);
         background-clip: text;
@@ -52,30 +79,55 @@
     }
 
     &__textico,
-    &__act {
+    &__actions {
         font-size: 1.25rem;
+
+        @include from(md) {
+            font-size: var(--big-body-size);
+        }
     }
 
     &__textico {
         display: flex;
         flex-direction: column;
         margin-bottom: 2.5rem;
+
+        @include from(md) {
+            flex-direction: row;
+        }
     }
 
     &__ico {
         --size: 4rem;
         width: var(--size);
         height: var(--size);
+
+        @include from(md) {
+            --size: 6rem;
+        }
     }
 
     &__actions {
         display: flex;
         flex-direction: column;
+
+        @include from(md) {
+            flex-direction: row;
+        }
     }
 
     &__act {
         color: var(--text-color);
         font-weight: var(--normal-font);
         padding-block: 0.5rem;
+
+        @include from(md) {
+            padding: 0;
+
+            &:first-of-type::after {
+                content: "|";
+                padding-inline: 2rem;
+            }
+        }
     }
 }

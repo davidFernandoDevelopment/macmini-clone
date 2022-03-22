@@ -174,8 +174,7 @@ img {
 
 .o-container {
   margin-inline: auto;
-  width: 87.5%;
-  max-width: calc(17.5rem + 4rem); }
+  width: calc(100% - 4rem); }
   @media screen and (min-width: 768px) {
     .o-container {
       width: 100%;
@@ -341,6 +340,14 @@ img {
     max-width: 46rem;
     height: 27rem;
     position: relative; }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__img {
+        max-width: 66rem;
+        height: 39rem; } }
+    @media screen and (min-width: 1024px) {
+      .c-hero-banner__img {
+        max-width: 80rem;
+        height: 40rem; } }
   .c-hero-banner__picture {
     position: absolute;
     width: 100%;
@@ -355,15 +362,29 @@ img {
     font-weight: var(--medium-font);
     letter-spacing: 0.0005em;
     line-height: 1.25; }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__container {
+        margin-top: -8rem; } }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__container {
+        margin-top: -10rem; } }
   .c-hero-banner__title {
     margin-bottom: 0.5rem;
     font-size: var(--bigger-body-size); }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__title {
+        font-size: 5rem;
+        margin-bottom: 1rem; } }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__title {
+        font-size: 6rem;
+        margin-bottom: 1.5rem; } }
   .c-hero-banner__subtitle {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1.05;
     letter-spacing: -0.015em;
     font-weight: var(--bold-font);
-    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
     background-image: radial-gradient(#eff1ff, #000 80%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -374,23 +395,41 @@ img {
     max-width: 56rem;
     margin-inline: auto;
     margin-bottom: 2.5rem; }
-  .c-hero-banner__textico, .c-hero-banner__act {
+  .c-hero-banner__textico, .c-hero-banner__actions {
     font-size: 1.25rem; }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__textico, .c-hero-banner__actions {
+        font-size: var(--big-body-size); } }
   .c-hero-banner__textico {
     display: flex;
     flex-direction: column;
     margin-bottom: 2.5rem; }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__textico {
+        flex-direction: row; } }
   .c-hero-banner__ico {
     --size: 4rem;
     width: var(--size);
     height: var(--size); }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__ico {
+        --size: 6rem; } }
   .c-hero-banner__actions {
     display: flex;
     flex-direction: column; }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__actions {
+        flex-direction: row; } }
   .c-hero-banner__act {
     color: var(--text-color);
     font-weight: var(--normal-font);
     padding-block: 0.5rem; }
+    @media screen and (min-width: 768px) {
+      .c-hero-banner__act {
+        padding: 0; }
+        .c-hero-banner__act:first-of-type::after {
+          content: "|";
+          padding-inline: 2rem; } }
 
 .black-background {
   background-color: var(--bg-color); }

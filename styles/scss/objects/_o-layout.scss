@@ -12,8 +12,7 @@
 }
 .o-container {
     margin-inline: auto;
-    width: 87.5%;
-    max-width: calc(17.5rem + 4rem);
+    width: calc(100% - 4rem);
 
     @include from(md) {
         width: 100%;
