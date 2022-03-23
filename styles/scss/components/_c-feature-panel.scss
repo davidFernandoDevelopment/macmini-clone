@@ -2,7 +2,6 @@
     --padding: 2rem;
     --max-width: 25rem;
     background-color: red; /* PARA PRUEBA */
-    border: 1px solid white;
     position: relative;
     overflow: hidden;
 
@@ -34,10 +33,6 @@
     }
 
     &__container {
-        @include from(md) {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
     }
 
     &__title {
@@ -64,7 +59,7 @@
     }
 
     &__description {
-        margin-bottom: 2rem;
+        margin-bottom: 3.5rem;
         font-size: 1.25rem;
         line-height: 1.4em;
         letter-spacing: 0.012em;
@@ -74,12 +69,17 @@
         @include from(lg) {
             margin-bottom: 4.5rem;
         }
+
+        .accent {
+            color: var(--text-color-alt);
+        }
     }
 
     &__characteristic-container {
+        --column-width: 250px;
         display: grid;
         gap: 3rem;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(var(--column-width), 1fr));
         margin-bottom: 4rem;
         padding-inline: 2rem;
         font-size: 1.25rem;
@@ -122,13 +122,8 @@
         font-weight: var(--bold-font);
     }
 
-    &--cpu {
-        background-image: linear-gradient(-135deg, #c6368a 0%, #673dc2 100%);
-
-        & .accent {
-            color: #c48cfc;
-        }
-
+    &--cpu,
+    &--learning {
         #{$b}__img {
             --width: 90%;
 
@@ -152,6 +147,14 @@
         }
     }
 
+    &--cpu {
+        background-image: linear-gradient(-135deg, #c6368a 0%, #673dc2 100%);
+
+        & .accent {
+            color: #c48cfc;
+        }
+    }
+
     &--gpu {
         background-color: transparent;
 
@@ -171,6 +174,44 @@
 
         #{$b}__characteristic-container {
             padding-top: 3rem;
+        }
+        #{$b}__container {
+            @include from(md) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+
+    &--learning {
+        background-image: linear-gradient(-135deg, #590a0d 0%, #10071c 100%);
+
+        #{$b}__description {
+            font-size: var(--big-body-size);
+            line-height: 1.2;
+        }
+        #{$b}__caption {
+            font-weight: var(--medium-font);
+        }
+
+        #{$b}__content {
+            @include from(lg) {
+                --max-width: 35rem;
+            }
+        }
+
+        #{$b}__characteristic-container {
+            align-items: end;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+
+            @include from(md) {
+                --column-width: 9.25rem;
+            }
+
+            @include from(lg) {
+                --column-width: 12.5rem;
+            }
         }
     }
 }

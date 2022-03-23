@@ -515,7 +515,6 @@ img {
   --max-width: 25rem;
   background-color: red;
   /* PARA PRUEBA */
-  border: 1px solid white;
   position: relative;
   overflow: hidden; }
   @media screen and (min-width: 350px) {
@@ -535,10 +534,6 @@ img {
       .c-feature-panel__content {
         max-width: var(--max-width);
         padding-right: 0; } }
-  @media screen and (min-width: 768px) {
-    .c-feature-panel__container {
-      display: grid;
-      grid-template-columns: 1fr 1fr; } }
   .c-feature-panel__title {
     font-size: var(--normal-title-size);
     margin-bottom: 1.5rem; }
@@ -556,7 +551,7 @@ img {
       .c-feature-panel__subtitle {
         margin-bottom: 1.5rem; } }
   .c-feature-panel__description {
-    margin-bottom: 2rem;
+    margin-bottom: 3.5rem;
     font-size: 1.25rem;
     line-height: 1.4em;
     letter-spacing: 0.012em;
@@ -565,10 +560,13 @@ img {
     @media screen and (min-width: 1024px) {
       .c-feature-panel__description {
         margin-bottom: 4.5rem; } }
+    .c-feature-panel__description .accent {
+      color: var(--text-color-alt); }
   .c-feature-panel__characteristic-container {
+    --column-width: 250px;
     display: grid;
     gap: 3rem;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--column-width), 1fr));
     margin-bottom: 4rem;
     padding-inline: 2rem;
     font-size: 1.25rem;
@@ -598,26 +596,26 @@ img {
         --size: 9rem; } }
   .c-feature-panel__caption {
     font-weight: var(--bold-font); }
+  .c-feature-panel--cpu .c-feature-panel__img, .c-feature-panel--learning .c-feature-panel__img {
+    --width: 90%;
+    display: block;
+    width: var(--width);
+    margin-left: auto; }
+    @media screen and (min-width: 768px) {
+      .c-feature-panel--cpu .c-feature-panel__img, .c-feature-panel--learning .c-feature-panel__img {
+        position: absolute;
+        bottom: 0;
+        --width: 32rem;
+        --spacing: 4rem;
+        left: calc(var(--width) + var(--spacing)); } }
+    @media screen and (min-width: 1024px) {
+      .c-feature-panel--cpu .c-feature-panel__img, .c-feature-panel--learning .c-feature-panel__img {
+        --width: 45rem;
+        --spacing: 0rem; } }
   .c-feature-panel--cpu {
     background-image: linear-gradient(-135deg, #c6368a 0%, #673dc2 100%); }
     .c-feature-panel--cpu .accent {
       color: #c48cfc; }
-    .c-feature-panel--cpu .c-feature-panel__img {
-      --width: 90%;
-      display: block;
-      width: var(--width);
-      margin-left: auto; }
-      @media screen and (min-width: 768px) {
-        .c-feature-panel--cpu .c-feature-panel__img {
-          position: absolute;
-          bottom: 0;
-          --width: 32rem;
-          --spacing: 4rem;
-          left: calc(var(--width) + var(--spacing)); } }
-      @media screen and (min-width: 1024px) {
-        .c-feature-panel--cpu .c-feature-panel__img {
-          --width: 45rem;
-          --spacing: 0rem; } }
   .c-feature-panel--gpu {
     background-color: transparent; }
     .c-feature-panel--gpu .c-feature-panel__video {
@@ -632,6 +630,30 @@ img {
       max-width: initial; }
     .c-feature-panel--gpu .c-feature-panel__characteristic-container {
       padding-top: 3rem; }
+    @media screen and (min-width: 768px) {
+      .c-feature-panel--gpu .c-feature-panel__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; } }
+  .c-feature-panel--learning {
+    background-image: linear-gradient(-135deg, #590a0d 0%, #10071c 100%); }
+    .c-feature-panel--learning .c-feature-panel__description {
+      font-size: var(--big-body-size);
+      line-height: 1.2; }
+    .c-feature-panel--learning .c-feature-panel__caption {
+      font-weight: var(--medium-font); }
+    @media screen and (min-width: 1024px) {
+      .c-feature-panel--learning .c-feature-panel__content {
+        --max-width: 35rem; } }
+    .c-feature-panel--learning .c-feature-panel__characteristic-container {
+      align-items: end;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; }
+      @media screen and (min-width: 768px) {
+        .c-feature-panel--learning .c-feature-panel__characteristic-container {
+          --column-width: 9.25rem; } }
+      @media screen and (min-width: 1024px) {
+        .c-feature-panel--learning .c-feature-panel__characteristic-container {
+          --column-width: 12.5rem; } }
 
 .black-background {
   background-color: var(--bg-color); }
