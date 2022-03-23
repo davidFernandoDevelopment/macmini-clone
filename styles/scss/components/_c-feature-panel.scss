@@ -1,7 +1,8 @@
 .c-feature-panel {
     --padding: 2rem;
     --max-width: 25rem;
-    background-color: red;
+    background-color: red; /* PARA PRUEBA */
+    border: 1px solid white;
     position: relative;
     overflow: hidden;
 
@@ -29,6 +30,13 @@
         @include from(md) {
             max-width: var(--max-width);
             padding-right: 0;
+        }
+    }
+
+    &__container {
+        @include from(md) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
 
@@ -68,6 +76,52 @@
         }
     }
 
+    &__characteristic-container {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin-bottom: 4rem;
+        padding-inline: 2rem;
+        font-size: 1.25rem;
+        text-align: center;
+        list-style: none;
+
+        @include from(lg) {
+            align-items: center;
+            padding-inline: 2rem;
+        }
+    }
+
+    &__characteristic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__number {
+        --size: 5rem;
+        font-size: var(--size);
+        font-family: var(--display-font);
+        font-weight: var(--bold-font);
+        line-height: 1;
+
+        & .x {
+            font-size: calc(var(--size) - 2rem);
+        }
+
+        @include from(md) {
+            --size: 6rem;
+        }
+
+        @include from(lg) {
+            --size: 9rem;
+        }
+    }
+
+    &__caption {
+        font-weight: var(--bold-font);
+    }
+
     &--cpu {
         background-image: linear-gradient(-135deg, #c6368a 0%, #673dc2 100%);
 
@@ -95,6 +149,28 @@
                 --width: 45rem;
                 --spacing: 0rem;
             }
+        }
+    }
+
+    &--gpu {
+        background-color: transparent;
+
+        #{$b}__video {
+            position: absolute;
+            left: 0%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: var(--z-negative);
+        }
+
+        #{$b}__content {
+            max-width: initial;
+        }
+
+        #{$b}__characteristic-container {
+            padding-top: 3rem;
         }
     }
 }
