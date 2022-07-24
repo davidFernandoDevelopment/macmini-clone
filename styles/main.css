@@ -568,7 +568,6 @@ img {
     gap: 3rem;
     grid-template-columns: repeat(auto-fill, minmax(var(--column-width), 1fr));
     margin-bottom: 4rem;
-    padding-inline: 2rem;
     font-size: 1.25rem;
     text-align: center;
     list-style: none; }
@@ -646,11 +645,11 @@ img {
         --max-width: 35rem; } }
     .c-feature-panel--learning .c-feature-panel__characteristic-container {
       align-items: end;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem; }
+      grid-template-columns: 1fr 1fr; }
       @media screen and (min-width: 768px) {
         .c-feature-panel--learning .c-feature-panel__characteristic-container {
-          --column-width: 9.25rem; } }
+          --column-width: 9.25rem;
+          gap: 5rem; } }
       @media screen and (min-width: 1024px) {
         .c-feature-panel--learning .c-feature-panel__characteristic-container {
           --column-width: 12.5rem; } }
